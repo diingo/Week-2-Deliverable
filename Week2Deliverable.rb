@@ -101,5 +101,14 @@
 	# 	"#{name} #{last_name}"
 	# end
 
-#Ex 7
+#Ex 12
+# Previously Exercise 33 
+# hash1 = {"XBox" => "Microsoft", "PS" => "Sony"}
+# hash2 = {"Macbook" => "Apple", "Windows 8" => "Microsoft"}
+# p hash1.merge(hash2)
 
+#Ex 13
+# Previously Exercise 34
+# hash1 = {"XBox" => "Microsoft", "PS" => "Sony"}
+# hash2 = {"Macbook" => "Apple", "Windows 8" => "Microsoft"}
+# hash1.merge!(hash2)
