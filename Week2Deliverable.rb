@@ -416,3 +416,412 @@
 #   	end
 # end
 
+
+#Ex 40
+#Exercise 9
+# def guess_number_1
+#   random_number = rand(2)
+#   puts "Guess a number any number"
+#   answer = gets.chomp.to_i
+#   if answer == random_number
+#     puts "You are right!"
+#   else
+#     puts "You're wrong!"
+#   end
+# end
+
+#Ex 41
+#Exercise 10
+# def guess_number_2
+#   random_number = rand(3)
+#   puts "Guess a number any number" 
+#   answer = gets.chomp.to_i
+#   until answer == random_number
+#       puts "Try again"
+#       answer = gets.chomp.to_i
+#   end
+#   puts "That's right"
+# end
+
+#Ex 42 Part 1
+#Exercise 11 Part 1
+# def guess_number_3
+#   random_number = rand(3)
+#   puts "Guess a number any number" 
+#   answer = gets.chomp.to_i
+#   times = 1
+#   until answer == random_number
+#       puts "Try again"
+#       answer = gets.chomp.to_i
+#       times += 1
+#   end
+#   puts "That's right"
+#   puts "You guessed #{times} times."
+# end
+
+# Exercise 11 Part 2
+# def guess_number_4
+#   random_number = rand(20)
+#   puts "Guess a number any number"
+#   answer = gets.chomp.to_i
+#   until answer == random_number
+  
+#       if answer > random_number
+#         puts "It's lower, try again"
+#         answer = gets.chomp.to_i
+#       else 
+#         puts "IT's higher, try again"
+#         answer = gets.chomp.to_i 
+#       end
+#   end
+#   puts "That's right"
+# end
+
+#Ex 43
+#Exercise 12 Note: I preferred using two if statements in a row instead of an elsif. This made things look clearer.
+# def guess_number_5
+#   random_number=50
+
+#   puts "Guess a number any number:"
+#   answer1 = gets.chomp.to_i
+
+#     if answer1 == random_number
+#       puts "You guessed right on the first try! Way to go!" 
+#     else
+#       puts "Try again:"
+#       answer2=gets.chomp.to_i
+
+#         until answer2 == random_number
+#             if (random_number - answer2).abs <= (random_number - answer1).abs
+#               answer1 = answer2
+#               puts "Getting Warmer, Try Another Number:"
+#               answer2 = gets.chomp.to_i
+#             end
+
+#             if (random_number - answer2).abs >= (random_number - answer1).abs
+#               answer1 = answer2
+#               puts "Getting Colder, Try Another Number:"
+#               answer2 = gets.chomp.to_i
+#             end
+#         end  
+#         puts "Good Job!"
+#     end  
+    
+# end 
+
+# Ex 44
+# Exercise 13
+# def nag(sentence)
+# 	10.times do |i|
+# 		puts i.to_s + " " + sentence
+# 	end
+# end
+
+# Ex 45
+#Exercise 14
+# def countdown(count)
+# 	until count == 0
+# 		puts count
+# 		count = count-1
+# 	end
+# end
+
+# Ex 46
+#Exercise 15
+# def countup(count)
+# 	i = 0
+# 	until i == count
+# 		i = i +1
+# 		puts i
+# 	end
+# end
+
+#Ex 47
+#Exercise 16
+# def fizz(count)
+#   until count == 0
+#     if count %3 == 0
+#       puts "Fizz"
+#     else
+#       puts count      
+#     end
+#     count -= 1
+#   end
+# end
+
+# Ex 48
+
+# class Chimpanzee
+# Class level
+ # 	@@Chimpanzees = []
+ # def self.all_chimps
+ # 	@@Chimpanzees
+ # end
+# Instance Level
+
+#  attr_accessor :bananas_eaten, :is_clean
+
+#  def initialize
+#  	@bananas_eaten = 0
+#  	@is_clean = true
+#  	@@Chimpanzees << self
+#  end
+
+#  def yell
+#  	puts "Oooh Ooh ooh Ah ah ah" 	
+#  end
+
+#  def eat
+#  	puts "Here's a banana."
+#  	@bananas_eaten += 1
+#  	puts "This monkey has poopled."
+#  	@is_clean = false
+#  endb
+
+#  def groom 
+#  	if @is_clean == false
+#  		puts "This monkey is getting a shower."
+#  		@is_clean = true
+#  	else
+#  		puts "Nothing to do. This monkey is clean."
+#  	end
+#  end
+
+#  def bananas_eaten
+#  	@bananas_eaten 
+#  end
+# end
+
+# Ex 54
+# class MKSStudent
+# 	attr_accessor :name
+
+# 	def initialize(name)
+# 		@name = name
+# 	end
+
+# 	def write_code_for(purpose)
+# 		puts "#{name} is writing code for #{purpose}"
+# 	end
+# end
+
+# Ex 56 - 60
+#Exercise 6-8 and More
+# class Roommate
+#  @@total_beer_count = 0
+#  @@roommate_total = 0
+#  @@roommates =[]
+#  @@beers_in_fridge = 20
+# 	def self.beer_count 
+# 	 	@@total_beer_count
+# 	end
+# 	def self.num_roommates
+# 	 	@@roommate_total
+# 	end
+#   def self.all_roommates
+#     @@roommates
+#   end
+#   def self.take_a_round
+#   	@@roommates.each do |roommate|
+#   		roommate.drink_beer
+#   	end
+#   end
+# def self.drunkest
+# 	@most_beers = 0
+# 	@@roommates.each do |roommate|
+# 		if roommate.beer_count > @most_beers
+# 			@most_beers = roommate.beer_count
+# 			@@drunkest = roommate.name
+# 		end
+# 	end
+# 	puts "#{@@drunkest} drank the most beers (#{@most_beers}) beers!"
+# end
+
+#  attr_accessor :beer_count, :name
+#  def initialize(name)
+#  	@name = name
+#  	@beer_count = 0
+#  	@@roommate_total += 1
+#  	@@roommates << self
+#  end
+#  def drink_beer
+#  	puts "yumm"
+#  	@@total_beer_count += 1
+#  	@beer_count += 1
+#  	@@beers_in_fridge -=1
+#  	if @@beers_in_fridge ==0
+#  		puts "YOU ARE OUT OF BEER!!!"
+#  	elsif @@beers_in_fridge < 5
+#  		Roommate.drunkest
+#  		puts "#{@@drunkest} needs to go on a beer run!"
+#  	end
+#  end
+# end
+
+# Ex 61
+class BankAccount
+	#CLASS VARIABLES
+	@@total_money_in_accounts=0
+	@@total_loans_out=0
+	@@pending_transactions = []
+	@@total_accounts = 0
+	attr_accessor :amount_available,
+		:loan_amount, :name
+	def initialize
+		@amount_available=500
+		@@total_money_in_accounts+=500
+		@loan_amount=0
+		@@total_accounts += 1
+	end
+	def deposit_money(amount)
+		return @amount_available+=amount
+		@@total_money_in_accounts+=amount
+	end
+	def withdraw_money(amount)
+		if @amount_available < amount
+			puts "You don't have that much money available in your account!"
+		else
+			return @amount_available-=amount
+			@@total_money_in_accounts-=amount
+		end
+	end
+	def get_balance
+		puts "You have #{@amount_available} dollars left in your bank account."
+	end
+	#LOANS
+	def take_loan(amount)
+		if @loan_amount > 1000
+			puts "You cannot take out another loan.  You have exceeded your maximum loan limit of $1000."
+		else
+			return @loan_amount +=amount
+			@@total_loans_out +=amount
+		end
+	end
+	def repay_loan(amount)
+		return @loan_amount -=amount
+		@@total_loans_out-=amount
+	end
+	def accrue_interest
+		return @loan_amount+=0.06*@loan_amount
+		@@total_loans_out+=0.06*@loan_amount
+	end
+	def get_outstanding_loan
+		puts "You have an outstanding loan of #{@loan_amount} dollars."
+	end
+	#CLASS METHOD
+	def self.transfer_money(transaction) #pick which transaction from @@pending_transactions to perform money transfer on, 0 = first transaction
+
+		puts @@pending_transactions[transaction][0].amount_available -= @@pending_transactions[transaction][2]
+		puts @@pending_transactions[transaction][1].amount_available += @@pending_transactions[transaction][2]
+	end
+	def self.total_cash_on_hand
+		puts "The bank has a total amount of #{@@total_money_in_accounts-@@total_loans_out} cash on hand."
+	end
+
+	#method is called in the Transactions class
+	def self.pending_transactions(account_one, account_two, amount)
+		@@pending_transactions << [account_one, account_two, amount]
+	end
+	def self.show_pending_transactions
+		@@pending_transactions
+	end
+	def self.total_accounts
+		@@total_accounts
+	end
+		#is this right? - trying to automate creation of users for testing code with
+		def self.create_users(i)
+			@users =[]
+			i.times do |num|
+				@users << BankAccount.new
+			end
+		end
+		def self.create_user_attributes
+			@users[0].loan_amount = 100
+			@users[1].loan_amount = 200
+			@users[0].name = "Dufus"
+			@users[1].name = "Mr. Wedge"
+			@first_transaction = Transaction.new(@users[0], @users[1], 100)
+						#if tried to call Transaction.new in console, would use method method self.users(i) like so: BankAccount.users(0) and BankAccount.users(1)
+		end
+		def self.users(i)
+			@users[i]
+		end
+end
+
+class Transaction
+	attr_accessor :account_one,
+		:account_two, :amount
+	def initialize(account_one, account_two, amount)
+		BankAccount.pending_transactions(account_one, account_two, amount)
+	end
+end
+
+
+
+class Airplane
+	@@city_to_airplane_hash = {}
+
+	attr_accessor :name, :city, :capacity 
+
+	def initialize(name, city, capacity)
+		@city = city
+		@capacity = capacity	
+		@name = name
+
+		if @@city_to_airplane_hash[city]
+			@@city_to_airplane_hash[city].push(self)
+		else
+			@@city_to_airplane_hash[city]=[self] 
+		end
+	end
+
+	def fly_to_city(new_city)
+		if @@city_to_airplane_hash[new_city]
+			@@city_to_airplane_hash[new_city].push(self)
+			
+			@@city_to_airplane_hash[city].delete_if { |x| x.name==self.name }
+			self.city = new_city
+		else
+			@@city_to_airplane_hash[new_city]=[self]
+			
+			@@city_to_airplane_hash[city].delete_if { |x| x.name==self.name }
+			self.city = new_city
+		end
+	end
+
+				# def self.can_i_fly(city_1,city_2)
+				# 	if @@city_to_airplane_hash[city_1]  && @@city_to_airplane_hash[city_2]==nil
+				# 		@@city_to_airplane_hash[city_1].name
+				# 	end
+				# end
+
+	def self.city_to_airplane_hash
+		@@city_to_airplane_hash
+	end
+end
+
+
+#Exercise 11
+class User
+	@@all_users = []
+
+	attr_accessor :id, :name
+
+	def initialize(name)
+		@name = name
+
+		@@all_users << self
+
+		# Here's (maybe) another way to do @id = (@@all_users.count - 1)
+		# @id = @@all_users.last.index
+
+		@id = (@@all_users.count - 1)
+	end
+
+# class
+	def self.display_users
+		@@all_users
+		
+	end
+
+end
